@@ -1,0 +1,202 @@
+.profile {
+
+  &__container {
+    margin-bottom: 30px;
+    padding: 0 30px;
+
+    @include viewport-md {
+      margin-bottom: 60px;
+      padding: 0 60px;
+    }
+
+    @include viewport-xl {
+      padding: 0 180px;
+    }
+
+    @include viewport-xxl {
+      padding: 0 280px;
+    }
+  }
+
+  &__container-grid {
+    @include viewport-md {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: 300px auto;
+    }
+
+    @include viewport-lg {
+      grid-template-rows: 150px auto;
+      gap: 60px;
+      row-gap: 30px;
+    }
+
+    @include viewport-xl {
+      grid-template-rows: 80px auto;
+      grid-template-columns: 400px auto;
+      gap: 60px;
+      row-gap: 30px;
+    }
+  }
+
+  &__container-inner {
+    line-height: 10px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    @include viewport-lg {
+      grid-row: 1 / 3;
+    }
+  }
+
+  &__image {
+    border-radius: $radius-md;
+    overflow: hidden;
+    width: 100%;
+    height: 375px;
+
+    @include viewport-xl {
+      height: 500px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__container-title {
+    padding: 30px 0;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    @include viewport-md {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+    }
+
+    @include viewport-lg {
+      padding: 0;
+      display: block;
+    }
+
+    &--two {
+      padding: 0;
+      @include viewport-xl {
+        padding: 0;
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+
+  &__title {
+    @include subtitle;
+    @include main-gradient-text;
+    line-height: 1.2;
+    margin-bottom: 15px;
+
+    @include viewport-md {
+      text-wrap: wrap;
+    }
+
+    @include viewport-lg {
+      text-wrap: nowrap;
+    }
+  }
+
+  &__profession {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: $text-color;
+    line-height: 22px;
+
+    @include viewport-xl {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  &__email, &__linkedin {
+    margin-bottom: 10px;
+    color: $regular-color;
+    cursor: pointer;
+
+    @include viewport-xl {
+      display: block;
+      margin: 0;
+
+      &:hover {
+        line-height: 15px;
+        color: $accent-color;
+        border-bottom: 1px solid $accent-color;
+      }
+    }
+  }
+
+  &__linkedin {
+    margin: 0;
+    // color: $regular-color;
+    // cursor: pointer;
+
+    // @include viewport-xl {
+    //   display: block;
+
+    //   &:hover {
+    //     line-height: 15px;
+    //     color: $accent-color;
+    //     border-bottom: 1px solid $accent-color;
+    //   }
+    // }
+  }
+
+  &__container-description {
+    position: relative;
+    margin-top: 30px;
+    line-height: 26px;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 4px;
+      position: absolute;
+      top: -30px;
+      left: 0;
+      background: $separator-color;
+    }
+
+    @include viewport-lg {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    &--two {}
+
+    &--three {}
+  }
+
+  &__span {
+    width: 100%;
+    height: 16px;
+    display: block;
+  }
+
+  &__subTitle {
+    @include partner-title;
+    margin-bottom: 15px;
+
+    &--two {}
+  }
+
+}

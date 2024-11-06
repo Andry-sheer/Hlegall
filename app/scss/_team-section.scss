@@ -1,0 +1,104 @@
+
+.team {
+  padding: 50px 0 60px;
+  line-height: 1.25;
+
+  &__container {
+  }
+
+  &__swiper {
+    margin-bottom: 30px;
+  }
+
+  &__slide {
+    border-radius: $radius-md;
+    overflow: hidden;
+
+    @include viewport-lg {
+      display: flex;
+    }
+  }
+
+  &__image {
+    height: 300px;
+    position: relative;
+
+    @include viewport-md {
+      height: 500px;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @include viewport-lg {
+      flex: 0 0 400px;
+      height: auto;
+    }
+  }
+
+  &__inner {
+    padding: 30px;
+    background: $separator-color;
+  }
+
+  &__inner-link {
+    @include base-link;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0 9px 10px 0;
+    margin: 0 0 5px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 5px;
+      right: 0;
+      width: 6px;
+      height: 6px;
+      border-bottom: 2px solid $regular-color;
+      border-right: 2px solid $regular-color;
+      transform: rotate(-45deg);
+      transition: .2s ease;
+    }
+  }
+
+	&__inner-title {
+    @include subtitle;
+    @include main-gradient-text;
+    font-size: 24px;
+    margin-bottom: 30px;
+
+    @include viewport-md {
+      font-size: 38px;
+    }
+	}
+
+  &__inner-name {
+    color: $text-color;
+    font-weight: 700;
+
+    p + p {
+      margin-top: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    }
+  }
+
+  &__pagination {
+    position: static;
+
+    .swiper-pagination-bullet {
+      width: 16px;
+      height: 16px;
+      background-color: $regular-color;
+    }
+  }
+}

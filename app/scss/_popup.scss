@@ -1,0 +1,124 @@
+
+.popup {
+  &.form-class {
+
+    .popup-content {
+      background-color: $bg-color !important;
+      padding: 20px !important;
+      font-family: 'Montserrat' !important;
+      font-weight: 400 !important;
+
+      @include viewport-md {
+        padding: 30px !important;
+      }
+    }
+
+    .popup-header {
+      display: none;
+    }
+
+    .popup-title {
+      margin-top: 0 !important;
+      font-size: 30px;
+      background: $gradient-red-text;
+      color: transparent !important;
+      background-clip: text;
+      line-height: 1.25;
+      text-align: left;
+      margin: 0 30px 30px 0;
+      font-weight: 700;
+    }
+
+    .popup-form {
+      position: relative;
+    }
+
+    .popup-close {
+      color: #EC6F5D !important;
+      position: absolute;
+      top: 5px;
+      right: -10px;
+      background: transparent;
+      padding: 10px;
+      font-size: 25px;
+      line-height: 10px;
+      border-radius: $radius-md;
+      transition: linear .2s;
+
+      @include viewport-md {
+        top: 0;
+        right: 0;
+        padding: 15px;
+      }
+
+      @include viewport-xl {
+        &:hover {
+          background: $separator-color;
+        }
+      }
+    }
+
+    .popup-body {
+      margin: 0 !important;
+    }
+
+    .popup-body p {
+      margin: 0;
+    }
+
+    .input-name, .input-message, .input-number, .input-email, .input-button {
+      width: 100%;
+      height: auto;
+      font-size: 16px;
+      padding: 15px;
+      border-radius: $radius-md;
+      outline: none;
+      border: none;
+      color: $text-color;
+      margin-bottom: 15px;
+    }
+
+    .input-name::placeholder, .input-message::placeholder, .input-number::placeholder, .input-email::placeholder {
+      font-family: 'Montserrat' !important;
+      color: $text-color;
+    }
+
+    .input-email {
+      margin-bottom: 30px;
+    }
+
+    .input-message {
+      font-family: "Montserrat";
+      font-size: 16px;
+      resize: none;
+      margin-bottom: 30px;
+    }
+
+    .input-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: $text-color;
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .input-button {
+      padding: 18px 0;
+      background: $regular-color;
+      color: $basic-white;
+      font-weight: 700;
+      transition: .2s linear;
+      margin: 0;
+
+      &:hover {
+        box-shadow: 1px 1px 12px $regular-color;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}

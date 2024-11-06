@@ -1,0 +1,253 @@
+
+.cards {
+
+  &__container {
+    padding: 0 30px 30px;
+
+    @include viewport-md {
+      padding: 0 60px 60px;
+    }
+
+    @include viewport-xxl {
+      padding: 0 160px 60px;
+    }
+
+    &--services {
+      padding: 0 30px 30px;
+
+      @include viewport-md {
+        padding: 0 60px 60px;
+      }
+  
+      @include viewport-xxl {
+        padding: 0 160px 60px;
+      }
+    }
+  }
+
+  &__link {
+    @include base-link;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 0 9px 10px 0;
+    font-size: 14px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      right: 0;
+      width: 7px;
+      height: 7px;
+      border-bottom: 2px solid $regular-color;
+      border-right: 2px solid $regular-color;
+      transform: rotate(-45deg);
+      transition: .2s ease;
+    }
+  }
+
+  &__title {
+    @include subtitle;
+    @include main-gradient-text;
+  }
+
+  &__container-inner {
+    display: grid;
+    padding: 0 30px;
+    gap: 30px;
+
+    @include viewport-md {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+      padding: 0 60px;
+    }
+
+    @include viewport-lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include viewport-xxl {
+      padding: 0 160px;
+    }
+
+    &--eComance {
+      display: flex;
+      flex-flow: column;
+
+      @include viewport-xl {
+        padding: 0 180px;
+      }
+
+      @include viewport-xxl {
+        padding: 0 280px;
+      }
+    }
+  }
+
+  &__content-card {
+    &--eComance {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      @include viewport-md {
+        display: flex;
+        flex-flow: column;
+      }
+    }
+  }
+
+  &__content-link {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__content-icon {
+    background: $basic-white;
+    border-radius: $radius-xl;
+    padding: 14px;
+    width: 92px;
+    height: 92px;
+    display: block;
+    cursor: pointer;
+
+    svg {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__content-title {
+    @include cardTitle($hover-color: $accent-color);
+    cursor: pointer;
+    margin: 30px 0 15px 0;
+    display: block;
+    text-decoration: none;
+
+    &--eComance {
+      font-size: 29px;
+      @include main-gradient-text;
+      margin: 30px 0;
+      font-weight: 700;
+
+      @include viewport-md {
+        font-size: 38px;
+      }
+    }
+  }
+
+  &__content-description {
+    @include description;
+    font-size: 16px;
+
+    &--span {
+      width: 100%;
+      height: 20px;
+      display: block;
+    }
+
+    &--eComance {
+      text-align: center;
+      font-size: 19px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button {
+    border-radius: $radius-md;
+    padding: 18px 30px;
+    font-weight: 700;
+    color: $basic-white;
+    background: $regular-color;
+    transition: linear .3s;
+    line-height: 1.25;
+    cursor: pointer;
+
+    @include viewport-xl {
+      &:hover {
+        box-shadow: 1px 1px 15px $active-color;
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    color: $basic-white;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  &__publication-text {
+    font-size: 18px;
+    color: $basic-white;
+  }
+
+  &__container-one {
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex: 1 1 45%;
+
+    @include viewport-md {
+      margin: 0;
+    }
+  }
+
+  &__container-two {
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+    flex: 1 1 45%;
+  }
+}
+
+
+.cadrs {
+
+  &__publication {
+    position: relative;
+    padding-top: 34px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: #ffffff50;
+    }
+  }
+
+  &__publication-container {
+    
+    @include viewport-md {
+      display: flex;
+      gap: 60px;
+    }
+  }
+
+  &__publication-inner {
+    position: relative;
+    padding-left: 14px;
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: $radius-rounded;
+      background: $accent-color;
+      position: absolute;
+      top: 12px;
+      left: 0;
+    }
+  }
+}
+

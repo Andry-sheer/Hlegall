@@ -1,0 +1,106 @@
+
+.tabs {
+  color: $basic-white;
+  padding: 30px 0;
+
+  @include viewport-md {
+    padding: 60px 0;
+  }
+
+  &__container {
+
+    @include viewport-lg {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 30px;
+    white-space: nowrap;
+    overflow: auto;
+    margin-right: -30px;
+    padding: 0 30px 25px 0;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    @include viewport-md {
+      margin-right: calc(-50vw + 324px);
+    }
+
+    @include viewport-lg {
+      margin: 0;
+      padding: 0 60px 0 0;
+      flex-flow: column;
+      flex: 1 1 40%;
+      border-right: 4px solid rgba(255, 255, 255, 0.30);
+      text-align: right;
+    }
+
+    @include viewport-xl {
+      flex: 1 1 35%;
+    }
+
+    @include viewport-xxl {
+      flex: 1 1 30%;
+    }
+  }
+
+  &__links-item {
+    @include subtitle($text-color);
+    cursor: pointer;
+
+    &:hover {
+      color: $accent-color; 
+    }
+
+    &.active {
+      @include main-gradient-text;
+    }
+  }
+
+  &__content {
+    padding: 34px 0 0;
+    border-top: 4px solid rgba(255, 255, 255, 0.30);
+
+    @include viewport-lg {
+      margin: 0;
+      padding: 0 0 0 60px;
+      flex: 1 1 40%;
+      border: 0;
+    }
+
+    @include viewport-xl {
+      flex: 1 1 50%;
+    }
+
+    @include viewport-xxl {
+      flex: 1 1 60%;
+    }
+  }
+
+  &__content-item {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__content-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+
+    @include viewport-md {
+      font-size: 30px;
+    }
+  }
+
+  &__content-description {
+    @include description;
+  }
+}

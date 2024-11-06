@@ -1,0 +1,116 @@
+
+body {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.wrapper {
+  background: $gradient-superSoft;
+  position: relative;
+  border-radius: 0 0 $radius-md $radius-md;
+  margin-bottom: 20px;
+  padding-bottom: 60px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: #CACADB;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    margin: 0 20px;
+    border-radius: 0 0 $radius-md $radius-md;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: #E7E7F2;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    margin: 0 40px;
+    border-radius: 0 0 $radius-md $radius-md;
+  }
+
+  &--services {
+    margin-bottom: 80px;
+  }
+
+  &--eComance {
+    margin-bottom: 80px;
+  }
+}
+
+.container {
+  // from 0 for 1920+
+  padding: 0 30px;
+
+  @include viewport-md {
+    // max-width: 648px;
+    max-width: 708px;
+    margin: 0 auto;
+  }
+
+  @include viewport-lg {
+    max-width: 964px;
+  }
+
+  @include viewport-xl {
+    max-width: 1380px;
+  }
+
+  @include viewport-xxl {
+    max-width: 1660px;
+  }
+}
+
+.dotted {
+  display: none;
+
+  @include viewport-md {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: $radius-rounded;
+    background: $separator-color;
+
+    &--gray {
+      background: $text-color;
+    }
+  }
+
+  &--profile {
+    display: none;
+    background: $text-color;
+
+    @include viewport-xl {
+      display: inline-block;
+    }
+  }
+}
+
+.dotted__profile {
+    display: none;
+    width: 6px;
+    height: 6px;
+    border-radius: $radius-rounded;
+    background: $separator-color;
+
+    @include viewport-xl {
+      display: inline-block;
+    }
+}
+
+.hidden-svg {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -10;
+}

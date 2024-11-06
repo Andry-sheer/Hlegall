@@ -1,0 +1,215 @@
+
+.publications {
+
+  &__container {
+    padding: 30px 30px 0px 30px;
+    background: $bg-color;
+
+    @include viewport-md {
+      padding: 30px 60px 0px 60px;
+    }
+
+    @include viewport-xxl {
+      padding: 30px 160px 0px 160px;
+    }
+
+    &--publication {
+      border-top-left-radius: $radius-md;
+      border-top-right-radius: $radius-md;
+      padding: 30px 30px 30px 30px;
+      background: $bg-color;
+  
+      @include viewport-md {
+        padding: 30px 60px 30px 60px;
+      }
+  
+      @include viewport-xxl {
+        padding: 30px 160px 30px 160px;
+      }
+    }
+  }
+
+  &__header {
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    @include base-link;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 0 9px 10px 0;
+    font-size: 14px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      right: 0;
+      width: 7px;
+      height: 7px;
+      border-bottom: 2px solid $regular-color;
+      border-right: 2px solid $regular-color;
+      transform: rotate(-45deg);
+      transition: .2s ease;
+    }
+  }
+
+  &__title {
+    @include subtitle;
+    @include main-gradient-text;
+  }
+
+  &__body {
+    display: flex;
+    flex-flow: column;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      border-top: 2px solid $separator-color;
+      width: 100%;
+    }
+
+    @include viewport-md {
+      flex-flow: row;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    &--publication {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__slide {
+    border-radius: 12px;
+    padding: 2px;
+    height: 42px;
+    background: $separator-color;
+    display: flex;
+    gap: 2px;
+  }
+
+  &__slide-article {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: $main-color;
+    border-radius: 10px;
+    padding: 8px 30px 10px 30px;
+    transition: all 1s;
+    cursor: pointer;
+
+    &:hover {
+      background: $bg-color;
+      transition: all .4s;
+    }
+
+    &.active {
+      background: $basic-white;
+    }
+  }
+
+  &__button-container {
+    padding: 0 0 30px 0;
+    display: flex;
+    justify-content: center;
+
+    &--bottom {
+      padding: 0;
+      margin: 30px 0;
+    }
+  }
+
+  &__card {
+    margin: 0 0 30px 0;
+    border-radius: $radius-md;
+    overflow: hidden;
+    background: $basic-white;
+
+    &:nth-child(3), &:nth-child(6) {
+      margin: 0;
+    }
+
+    @include viewport-md {
+      flex: 1 1 45%;
+      margin: 0;
+    }
+
+    @include viewport-lg {
+      flex: 1 1 30%;
+    }
+
+    &--publication {
+      &:nth-child(3) {
+        margin: 0 0 30px 0;
+      }
+
+      @include viewport-md {
+        &:nth-child(3) {
+          margin: 0;    
+        }
+      }
+    }
+  }
+
+  &__card-inner {
+    padding: 30px;
+  }
+
+  &__card-title {
+    @include publication-title;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: all .3s;
+
+    @include viewport-xl {
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+
+  &__card-date {
+    @include publication-title($text-color);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+  }
+
+  &__card-description {
+    font-size: 14px;
+    color: $basic-black;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 0;
+      border-top: 4px solid $separator-color;
+      width: 100%;
+    }
+  }
+}
+.piblications {
+
+  &__card-image {
+    height: 200px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+

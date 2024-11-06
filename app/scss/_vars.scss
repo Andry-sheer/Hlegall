@@ -1,0 +1,148 @@
+//?---------------------------- VARIABLES ------------------------------------------------>
+
+//? COLORS ---------------------------------------------------------->
+$main-color: #323264;
+$alt-color: #46466E;
+$soft-color: #686887;
+$accent-color: #f0145a;
+$regular-color: #24A3FF;
+$hover-color: #0085FF;
+$active-color: #006ccf;
+$bg-color: #F5F5FA;
+$bg-alt: #EDEDF7;
+$text-color: #B3B3BA;
+$basic-white: #ffffff;
+$separator-color: #E6E6F0;
+$basic-black: #000000;
+
+//? GRADIENT -------------------------------------------------------->
+$gradient: linear-gradient(130deg, #323264, #323264 70%, #a54b5f);
+$gradient-soft: linear-gradient(42deg, #323264 15%, #323264 50%, #7a425e 88%);
+$gradient-red: linear-gradient(325deg, #f0145a 5%, #693264 70%);
+$gradient-superSoft: linear-gradient(230deg, #323264 10%, #323264 60%, #643e72 90%);
+$gradient-red-text: linear-gradient(90deg, #f0145a, #ef8080);
+
+//? RADIUS ---------------------------------------------------------->
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-xl: 24px;
+$radius-rounded: 50%;
+
+//? BREAKPOINTS ----------------------------------------------------->
+$breakpoint-ss: 767px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1440px;
+$breakpoint-xxl: 1920px;
+
+//? MIXINS ---------------------------------------------------------->
+@mixin viewport-ss {
+  @media (max-width: $breakpoint-ss) {
+    @content;
+  }
+}
+
+@mixin viewport-md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin viewport-lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin viewport-xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin viewport-xxl {
+  @media (min-width: $breakpoint-xxl) {
+    @content;
+  }
+}
+
+@mixin main-gradient-text($bg-text: $gradient-red-text) {
+  background: $bg-text;
+  color: transparent;
+  background-clip: text;
+}
+
+@mixin partner-title ($color: $main-color) {
+  color: $color;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+@mixin replace-title($color: $text-color){
+  font-size: 21px;
+  line-height: 30px;
+  color: $color;
+  text-decoration: none;
+}
+
+@mixin publication-title ($color: $regular-color) {
+  font-weight: 700;
+  color: $color;
+  font-size: 16px;
+}
+
+@mixin subtitle($color: $text-color) {
+  color: $color;
+  font-size: 30px;
+  font-weight: 700;
+
+  @include viewport-md {
+    font-size: 38px;
+  }
+}
+
+@mixin description {
+  color: $basic-white;
+  font-size: 19px;
+  line-height: 30px;
+}
+
+@mixin cardTitle ($color: $regular-color, $hover-color: $hover-color, $active-color: $active-color){
+  color: $color;
+  font-weight: 700;
+  font-size: 22px;
+  transition: .2s ease;
+
+  @include viewport-md {
+    &:hover {
+    color: $hover-color;
+    }
+
+    &:active {
+      color: $active-color;
+    }
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin base-link($color: $regular-color, $hover-color: $accent-color) {
+  color: $color;
+  text-decoration: none;
+  transition: .2s ease;
+  font-weight: 700;
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:hover::before {
+    border-color: $hover-color;
+  }
+}
