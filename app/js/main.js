@@ -76,40 +76,7 @@
 })();
 
 
-// const swiper = new Swiper('.about__swiper', {
-//   // Default parameters
-//   slidesPerView: 1,
-//   spaceBetween: 10,
-//   // Responsive breakpoints
-//   breakpoints: {
-//     // when window width is >= 640px
-//     768: {
-//       slidesPerView: 4,
-//       spaceBetween: 40
-//     }
-//   }
-// })
-
-
-
 //? ----------- CDN -------------------------------------->
-
-// const formPopup = new Popup({
-//   id: "form-class",
-//   title: "My First Popup",
-//   content: `
-//       <form>
-//         <input placeholder="name" type="text" />
-//         <input placeholder="email" type="email" />
-//         <input placeholder="password" type="password" />
-//       </form>
-
-//       An example popup.
-//       Supports multiple lines.`,
-// });
-
-// formPopup.show();
-
 const formPopup = new Popup({
   id: "form-class",
   disableScroll: true,
@@ -118,19 +85,22 @@ const formPopup = new Popup({
         <h1 class="popup-title">We would like to help you</h1>
         <button class="popup-close">X</button>
       <form>
-        <input class="input-name" placeholder="Name" type="text"/>
-        <textarea class="input-message" placeholder="Message" rows="6"></textarea>
+        <input class="input-name" id="NameID" placeholder="Name" type="text"/>
+        <textarea class="input-message" id="TextAreaID" placeholder="Message" rows="6"></textarea>
         <h3 class="input-title">How to answer you?</h3>
-        <input class="input-number" placeholder="Phone number" type="number"/>
-        <input class="input-email" placeholder="Email" type="email"/>
+        <input class="input-number" id="PhoneID" placeholder="Phone number" type="number"/>
+        <input class="input-email" id="EmailID" placeholder="Email" type="email"/>
         <input class="input-button" type="submit" value="Send message"/>
       </form>
     </div>`,
 });
 
 (()=> {
-  const popupButton = document.querySelector('.cards__button');
-  popupButton.addEventListener('click', ()=> {
-    formPopup.show();
-  })
+  const popupButton = document.querySelector('.subPage__button');
+
+  if(popupButton){
+      popupButton.addEventListener('click', ()=> {
+        formPopup.show();
+    });
+  }
 })();

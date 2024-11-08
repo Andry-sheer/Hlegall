@@ -1,11 +1,19 @@
 
 .partners {
+  padding: 60px 0 0 0;
+  @include viewport-xxl {
+    padding: 60px 0;
+  }
 
   &__container {
-
     @include viewport-xxl {
-      padding: 0 100px;
-      margin-bottom: 60px;
+      margin: 0 auto;
+      max-width: 1660px;
+      padding: 0 30px;
+    }
+
+    &--services {
+      padding: 60px 30px;
     }
   }
 

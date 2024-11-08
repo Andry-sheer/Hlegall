@@ -29,19 +29,12 @@ $radius-xl: 24px;
 $radius-rounded: 50%;
 
 //? BREAKPOINTS ----------------------------------------------------->
-$breakpoint-ss: 767px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-xl: 1440px;
 $breakpoint-xxl: 1920px;
 
 //? MIXINS ---------------------------------------------------------->
-@mixin viewport-ss {
-  @media (max-width: $breakpoint-ss) {
-    @content;
-  }
-}
-
 @mixin viewport-md {
   @media (min-width: $breakpoint-md) {
     @content;

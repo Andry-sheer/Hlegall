@@ -1,96 +1,55 @@
-
-.footerSection {
-}
 .footer {
   background: $bg-color;
-  padding:  30px;
-
-    @include viewport-md {
-      padding: 30px 60px; 
-    }
-
-    @include viewport-xxl {
-      padding: 30px 160px;
-    }
-
-    &--services {
-      @include viewport-md {
-        padding: 30px 185px;
-      }
-
-      @include viewport-lg {
-        padding: 30px 60px; 
-      }
-    }
-
-    &__container {
-      margin-top: 30px;
-
-      @include viewport-md {
-        position: relative;
-      }
-
-      &--services, &--team, &--profile {
-        margin: 0;
-      }
-
-      &--about, &--publication {
-        margin: 0;
-        position: relative;
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: -30px;
-          left: 0;
-          width: 100%;
-          border-top: 2px solid $separator-color;
-        }
-      }
-		}
+  padding: 30px 0;
 
 		&__list {
       display: flex;
       flex-flow: column;
       align-items: center;
-      gap: 15px;
+      gap: 20px;
+      position: relative;
+      padding: 30px 0 0 0;
 
-      @include viewport-md {
-        align-items: start;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 2px solid $separator-color;
+        width: 100%;
       }
 
-      &--services {
-        @include viewport-md {
-          gap: 21px;
-          align-items: start;
-          margin-bottom: 30px;
-        }
+      @include viewport-md {
+        display: grid;
+        grid-template-columns: 1fr auto;
+      }
 
-        @include viewport-lg {
-          margin: 0;
+      &--noBorder {
+        padding: 0;
+        &::after {
+          display: none;
         }
       }
 		}
 
-		&__adress {
+		&__address {
       font-size: 16px;
       color: $main-color;
 		}
 
-    &__inner-adress {
-      text-align: center;
+    &__address-container {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: 10px;
 
       @include viewport-md {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        flex-flow: row;
+        grid-area: 1/1/2/2;
       }
 		}
 
 		&__map {
-		}
-
-		&__map-item {
       @include partner-title($regular-color);
       display: block;
       text-decoration: none;
@@ -104,7 +63,7 @@
       }
 		}
 
-    &__inner-social {
+    &__social {
       display: flex;
       flex-flow: column;
       gap: 15px;
@@ -115,16 +74,11 @@
         flex-flow: row;
         align-items: center;
         gap: 10px;
+        grid-area: 2/1/3/3;
       }
 		}
 
-		&__icon {
-      width: 38px;
-      height: 38px;
-      display: block;
-		}
-
-		&__icon-svg {
+		&__link {
       display: block;
       width: 38px;
       height: 38px;
@@ -143,60 +97,30 @@
 		}
 
 		&__phone {
-		}
-
-		&__phone-item {
       color: $alt-color;
       font-weight: 700;
       text-decoration: none;
 		}
 
 		&__email {
-      margin-bottom: 30px;
-
-      @include viewport-md {
-        margin: 0;
-      }
-		}
-
-		&__email-item {
       color: $regular-color;
       text-decoration: none;
       font-weight: 700;
       transition: .2s linear;
 
-      @include viewport-xl {
-        &:hover {
-          color: $accent-color;
-        }
+      &:hover {
+        color: $accent-color;
+      }
   
-        &:active {
-          color: $active-color;
-        }
+      &:active {
+        color: $active-color;
       }
 		}
 
 		&__title {
       text-align: center;
       color: $text-color;
-
-      @include viewport-md {
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
-
-      &--services {
-        @include viewport-md {
-          position: static;
-        }
-
-        @include viewport-lg {
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
-      }
+      grid-area: 1/2/2/3;
 		}
 }
 

@@ -6,33 +6,6 @@
   justify-content: space-between;
   background: url('../images/header-bg.png') no-repeat center / auto 100%;
 
-  &--services, &--eComance, &--about, &--publication, &--team, &--profile {
-    background: none;
-    min-height: 0vh;
-    margin-bottom: 30px;
-
-    @include viewport-md {
-      margin-bottom: 60px;
-    }
-  }
-
-  &__header {
-    .active-text {
-      color: $accent-color;
-      @include viewport-md {
-        border-bottom: 2px solid $accent-color;
-      }
-    }
-
-    .active-text-black {
-      color: $accent-color;
-      @include viewport-md {
-        color: $regular-color;
-        border-bottom: 2px solid $regular-color;
-      }
-    }
-  }
-
   &__title {
     color: $basic-white;
     font-size: 36px;
@@ -71,8 +44,32 @@
 
 
 .header {
+  padding: 0 0 30px 0;
   @include viewport-md {
-    padding: 50px 0 0;
+    padding: 50px 0 60px 0;
+  }
+
+  &--home {
+    padding: 0;
+
+    @include viewport-md {
+      padding: 50px 0 0 0;
+    }
+  }
+
+  .active-text {
+    color: $accent-color;
+    @include viewport-md {
+      border-bottom: 2px solid $accent-color;
+    }
+  }
+
+  .active-text-black {
+    color: $accent-color;
+    @include viewport-md {
+      color: $regular-color;
+      border-bottom: 2px solid $regular-color;
+    }
   }
 
   &__container {
@@ -89,7 +86,7 @@
     padding: 10px 30px;
     margin: 0 -30px;
 
-    &--publication, &--about, &--team, &--profile {
+    &--whitePage {
       background: $bg-color;
     }
 
@@ -112,10 +109,6 @@
 
   &__langs {
     display: flex;
-  }
-
-  &__langs-item {
-    
   }
 
   &__langs-link {
@@ -142,7 +135,7 @@
       }
     }
 
-    &--about, &--publication, &--team, &--profile {
+    &--whitePage {
       color: $text-color;
 
       @include viewport-xl {
@@ -168,19 +161,8 @@
     font-weight: 700;
     text-decoration: none;
 
-    &--about, &--publication, &--team, &--profile {
+    &--whitePage {
       color: $text-color;
-    }
-  }
-
-  &__svgIcon {
-    width: 24px;
-    height: 24px;
-    fill: $basic-white;
-    transition: linear .2s;
-
-    &--about, &--publication, &--team, &--profile {
-      fill: $text-color;
     }
   }
 
@@ -192,7 +174,18 @@
       width: 24px;
       height: 24px;
 
-      &:hover .header__svgIcon {
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: $basic-white;
+        transition: linear .2s;
+      }
+
+      &--whitePage svg {
+        fill: $text-color;
+      }
+
+      &:hover svg {
         fill: $accent-color;
       }
     }
@@ -203,7 +196,7 @@
     justify-content: space-between;
     padding: 15px 0 0;
     align-items: center;
-    line-height: 10px;
+
 
     @include viewport-md {
       padding: 0;
@@ -217,10 +210,9 @@
   }
 
   &__box-logo {
-    line-height: 10px;
+    text-decoration: none;
 
     img {
-      line-height: 10px;
       width: 70px;
       height: 32px;
 
@@ -230,108 +222,39 @@
       }
     }
 
-    &--services, &--eComance, &--about, &--team, &--profile, &--contact {
-      line-height: 10px;
+    &--slash {
+      display: flex;
+      gap: 8px;
 
-        img {
-          width: 169px;
-          height: 32px;
-        }
-
-        @include viewport-md {
-          img {
-            width: 302px;
-            height: 60px;
-          }
-        }
+      @include viewport-md {
+        gap: 14px;
       }
-
-      &--contact {
-        img {
-          width: 166px;
-          height: 32px;
-        }
-
-        @include viewport-md {
-          img {
-            width: 297px;
-            height: 60px;
-          }
-        }
-      }
-
-      &--team {
-        img {
-          width: 142px;
-          height: 32px;
-        }
-
-        @include viewport-md {
-          img {
-            width: 254px;
-            height: 60px;
-          }
-        }
-      }
-
-      &--profile {
-        img {
-          width: 142px;
-          height: 32px;
-        }
-
-        @include viewport-md {
-          img {
-            width: 254px;
-            height: 60px;
-          }
-        }
-      }
-
-      &--about {
-        img {
-          width: 177px;
-          height: 32px;
-        }
-
-        @include viewport-md {
-          img {
-            width: 318px;
-            height: 60px;
-          }
-        }
-      }
-
-      &--publication {
-        img {
-          width: 212px;
-          height: 32px;
-        }
-
-        @include viewport-md {
-          img {
-            width: 382px;
-            height: 60px;
-          }
-        }
-      }
-
     }
+  }
 
-  &__box-inside {
-    border-radius: $radius-md;
-    padding: 10px 7px;
-    margin: -10px -7px 0 0;
-    
-    transition: all .5s;
-    &:active {
-      background: $separator-color;
+  &__logo-span {
+    height: 26px;
+    width: 3px;
+    background: $accent-color;
+    transform:skewX(-20deg);
+
+    @include viewport-md {
+      width: 6px;
+      height: 47px;
+    }
+  }
+
+  &__logo-text {
+    font-size: 20px;
+    color: $basic-white;
+    line-height: 1.1;
+
+    @include viewport-md {
+      font-size: 36px;
     }
 
     &--black {
-      &:active {
-        background: $text-color;
-      }
+      color: $basic-black;
     }
   }
 
@@ -367,36 +290,11 @@
       transform: translateY(-50%);
     }
 
-    &--about, &--publication, &--team, &--profile {
-      width: 25px;
-      height: 18px;
-      position: relative;
-      cursor: pointer;
-  
-      @include viewport-md {
-        display: none;
-      }
-
+    &--whitePage {
       &::before,
       &::after,
       span {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 2px;
-        right: 0;
         background: $main-color;
-      }
-
-      &::after {
-        top: auto;
-        bottom: 0;
-      }
-  
-      span {
-        top: 50%;
-        transform: translateY(-50%);
       }
     }
   }
@@ -509,7 +407,7 @@
       border-color: $regular-color;
     }
 
-    &--about, &--publication, &--team, &--profile {
+    &--whitePage {
       @include viewport-md {
         @include base-link($regular-color, $accent-color);
         

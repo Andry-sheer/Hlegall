@@ -1,0 +1,105 @@
+.subPage {
+  margin: 0 0 80px 0;
+
+  &__container {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__link {
+    width: 92px;
+    height: 92px;
+    display: block;
+    padding: 14px;
+    background: $basic-white;
+    border-radius: $radius-xl;
+
+    svg {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__title {
+    @include subtitle;
+    @include main-gradient-text;
+  }
+
+  &__description {
+    @include description;
+  }
+
+  &__button {
+    border-radius: $radius-md;
+    background: $regular-color;
+    font-weight: 700;
+    color: $basic-white;
+    padding: 18px 30px;
+    line-height: 1.25;
+    box-shadow: 0 0 20px rgba(36, 163, 255, .5);
+  }
+
+  &__container--inner {
+    padding: 60px 30px 60px;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      right: 30px;
+      border-top: 4px solid $separator-color;
+    }
+  }
+
+  &__subTitle {
+    @include subtitle($basic-white);
+    font-size: 22px;
+  }
+
+  &__sub-container {
+    display: flex;
+    flex-flow: column;
+    padding: 30px 0 0 0;
+
+    @include viewport-md {
+      flex-flow: row;
+      gap: 60px;
+    }
+  }
+
+  &__sub-container--one {
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+    flex: 1 1 50%;
+  }
+
+  &__descriptions {
+    padding-left: 14px;
+    @include description;
+    position: relative;
+
+    &::before {
+      content: '';
+      top: 12px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background: $accent-color;
+      position: absolute;
+      border-radius: $radius-rounded;
+    }
+  }
+
+  &__sub-container--two {
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+    flex: 1 1 50%;
+  }
+}
