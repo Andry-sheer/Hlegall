@@ -1,21 +1,11 @@
 .profile {
+  @include viewport-xl {
+    margin-bottom: 58px;
+  }
 
   &__container {
     margin-bottom: 30px;
     padding: 0 30px;
-
-    @include viewport-md {
-      margin-bottom: 60px;
-      padding: 0 60px;
-    }
-
-    @include viewport-xl {
-      padding: 0 180px;
-    }
-
-    @include viewport-xxl {
-      padding: 0 280px;
-    }
   }
 
   &__container-grid {
@@ -126,14 +116,19 @@
     margin-bottom: 10px;
     color: $regular-color;
     cursor: pointer;
+    text-decoration: none;
+    display: block;
+
+      &:hover {
+        color: $accent-color;
+      }
+
 
     @include viewport-xl {
-      display: block;
       margin: 0;
 
       &:hover {
-        line-height: 15px;
-        color: $accent-color;
+        margin-bottom: -1px;
         border-bottom: 1px solid $accent-color;
       }
     }
@@ -141,18 +136,6 @@
 
   &__linkedin {
     margin: 0;
-    // color: $regular-color;
-    // cursor: pointer;
-
-    // @include viewport-xl {
-    //   display: block;
-
-    //   &:hover {
-    //     line-height: 15px;
-    //     color: $accent-color;
-    //     border-bottom: 1px solid $accent-color;
-    //   }
-    // }
   }
 
   &__container-description {

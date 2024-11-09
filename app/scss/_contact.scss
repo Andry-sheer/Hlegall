@@ -1,24 +1,14 @@
 .contact {
   &__container {
-    padding: 0 30px;
-    margin: 0 0 30px 0;
+    padding: 0 30px 30px;
 
     @include viewport-md {
-      padding: 0 60px;
-      margin: 0 0 60px 0;
+      padding: 0 30px 60px;
     }
 
     @include viewport-lg {
       display: flex;
       gap: 60px;
-    }
-
-    @include viewport-xl {
-      padding: 0 180px;
-    }
-
-    @include viewport-xxl {
-      padding: 0 280px;
     }
   }
 
@@ -45,19 +35,14 @@
     margin: 30px 0;
   }
 
-  &__tel {
+  &__phone {
     margin: 0 0 15px 0;
-  }
-
-  &__tel-item {
     @include replace-title($alt-color);
     cursor: pointer;
+    display: block;
   }
 
   &__email {
-  }
-
-  &__email-item {
     @include replace-title($regular-color);
     transition: all 0.3s;
     display: inline-block;
@@ -127,9 +112,6 @@
     @include viewport-md {
       font-size: 30px;
     }
-  }
-
-  &__form {
   }
 
   &__input-name,

@@ -2,20 +2,7 @@
 .public {
 
   &__container {
-    padding: 0 30px;
-    margin-bottom: 60px;
-
-    @include viewport-md {
-      padding: 0 60px;
-    }
-
-    @include viewport-xl {
-      padding: 0 180px;
-    }
-
-    @include viewport-xxl {
-      padding: 0 280px;
-    }
+    padding: 0 30px 60px;
 
     &--two {
         padding: 0;
@@ -46,9 +33,6 @@
       width: 100%;
       height: 4px;
       background: $separator-color;
-    }
-
-    &--two {
     }
 
     &--three {
@@ -84,13 +68,18 @@
 
   &__image {
     margin-bottom: 30px;
-    line-height: 10px;
 
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
       border-radius: $radius-md;
+    }
+
+    @include viewport-md {
+      img {
+        height: 500px;
+      }
     }
 
     &--two {
@@ -151,15 +140,6 @@
     line-height: 26px;
   }
 
-  &__span {
-    width: 100%;
-    height: 16px;
-    display: block;
-
-    &--two {
-    }
-  }
-
   &__title {
     @include subtitle;
     @include main-gradient-text;
@@ -195,24 +175,20 @@
     }
   }
 
-  &__svg-container {
+  &__icons-container {
     display: flex;
     justify-content: flex-start;
     gap: 10px;
   }
 
   &__link {
-    display: block;
     line-height: 10px;
-  }
-
-  &__image-svg {
     border-radius: $radius-md;
     background: $bg-color;
     padding: 9px;
     transition: linear .2s;
     cursor: pointer;
-    
+
     svg {
       width: 24px;
       height: 24px;

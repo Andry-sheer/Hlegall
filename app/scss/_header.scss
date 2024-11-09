@@ -137,13 +137,10 @@
 
     &--whitePage {
       color: $text-color;
-
-      @include viewport-xl {
         &:hover {
           background: $bg-alt;
           color: $text-color;
         }
-      }
     }
   }
 
@@ -247,7 +244,6 @@
   &__logo-text {
     font-size: 20px;
     color: $basic-white;
-    line-height: 1.1;
 
     @include viewport-md {
       font-size: 36px;
@@ -308,7 +304,7 @@
     background: $basic-white;
     border-radius: $radius-md $radius-md 0px 0px;
     padding: 12px;
-    transition: linear .3s;
+    transition: linear .4s;
     box-shadow: 1px 1px 10px black;
 
     @include viewport-md {
@@ -352,14 +348,14 @@
       transform: rotate(45deg);
     }
 
+    &::after {
+      transform: rotate(-45deg);
+    }
+
     &:active {
       background-color: $separator-color;
       padding: 10px 7px;
       border-radius: 4px;
-    }
-
-    &::after {
-      transform: rotate(-45deg);
     }
     
     @include viewport-md {

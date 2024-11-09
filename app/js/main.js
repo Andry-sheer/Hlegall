@@ -34,7 +34,7 @@
 })();
 
 (()=> {
-  const publicationButton = document.querySelectorAll('.publications__slide-article');
+  const publicationButton = document.querySelectorAll('.publicationPage__switch-article');
   publicationButton.forEach((item, index)=> {
     item.addEventListener('click', ()=> {
       publicationButton.forEach((item)=> {

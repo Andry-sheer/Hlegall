@@ -83,6 +83,13 @@
       color: $text-color;
     }
 
+    .input-name:focus,
+    .input-message:focus,
+    .input-number:focus,
+    .input-email:focus {
+      outline: 2px solid $regular-color;
+    }
+
     .input-email {
       margin-bottom: 30px;
     }

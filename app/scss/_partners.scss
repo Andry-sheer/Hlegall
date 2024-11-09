@@ -52,7 +52,14 @@
       flex: 1 1 25%;
     }
 
-    &:nth-child(1) { background: #1c4280; } 
+    &:nth-child(1) { 
+      background: #1c4280;
+      border-radius: $radius-md $radius-md 0 0;
+
+      @include viewport-md {
+        border-radius: 0;
+      }
+    } 
     &:nth-child(2) { background: #143646; }
     &:nth-child(3) { background: #f48b30; }
     &:nth-child(4) { background: #9e4dc3; }

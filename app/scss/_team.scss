@@ -1,32 +1,11 @@
 
 .pageTeam {
 
-  &__container {
-    padding: 0 30px;
-    margin-bottom: 60px;
-
-    @include viewport-md {
-      padding: 0 60px;
-    }
-
-    @include viewport-xxl {
-      padding: 0 160px;
-    }
-  }
-
   &__container-title {
-    margin-bottom: 30px;
-
-    @include viewport-md {
-      margin-bottom: 60px;
-    }
-
-    @include viewport-lg {
-      padding: 0 120px;
-    }
+    margin: 0 0 60px 0;
   }
 
-  &__span {
+  &__link {
     display: block;
     width: 32px;
     height: 32px;
@@ -70,7 +49,7 @@
     }
   }
 
-  &__span-container {
+  &__link-container {
     position: absolute;
     top: 0;
     right: 0;
@@ -79,7 +58,12 @@
   &__title {
     @include subtitle;
     @include main-gradient-text;
-    line-height: 1.21;
+    line-height: 1.2;
+    margin: 0 0 30px 0;
+
+    @include viewport-md {
+      margin: 0 0 60px 0;
+    }
   }
 
   &__container-inner {
@@ -122,13 +106,6 @@
       height: 400px;
       width: 100%;
     }
-  }
-
-  &__link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: $radius-rounded;
   }
 
   &__card-container {
